@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descripción del Sitio Web">
+  <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+  <link rel="stylesheet" href="estilos.css">
+  <title>Título del sitio web</title>
+</head>
+
+<body>
+  <div class="contenedorPrincipal ancho">
+
+  <div class="contenedorBienvenida">
+      <h2 class="contactanos">Contáctanos</h2>
+      <h1 class="titulo">¿Necesitas ayuda para hacer crecer tu negocio?</h1>
+      <p class="texto">Solicita más información y juntos idearemos la estrategia perfecta para cumplir tus metas.</p>
+    </div>
+
+  <div class="contenedorFormulario centrar">
+    <form class="formulario" action="guardar.php" method="get" id="formulario">
+      <input class="elementos" type="text" name="nombre" id="nombre" placeholder="Nombre*">
+      <input class="elementos" type="text" name="apellido" id="apellido" placeholder="Apellidos*">
+      <input class="elementos" type="email" name="email" id="email" placeholder="Correo electrónico*">
+      <input class="elementos" type="tel" name="telefono" id="telefono" placeholder="Número de teléfono móvil*">
+      <select class="select" name="presupuesto" id="presupuesto">
+        <option value="">Selecciona tu presupuesto</option>
+        <option value="presupuestoBajo" id="presupuestoBajo">De $18,000 - $25,000</option>
+        <option value="presupuestoMedio" id="presupuestoMedio">De $25,000 - $45,000</option>
+        <option value="presupuestoAlto" id="presupuestoAlto">De $45,000 - $100,000</option>
+      </select>
+      <input  class="elementos2" type="text" name="nombreEmpresa" id="nombreEmpresa" placeholder="Nombre de la empresa">
+      <select class="select" name="industria" id="industria">
+        <option value="">Selecciona una industria de tu empresa*</option>
+        <option value="inmobiliaria" id="inmobiliaria">Inmobiliaria</option>
+        <option value="educacion" id="educacion">Educación</option>
+        <option value="turismo" id="turismo">Turismo</option>
+        <option value="energias" id="energias">Energías renovables</option>
+        <option value="servicios" id="servicios">Servicios profesionales</option>
+        <option value="startup" id="startup">Startup</option>
+        <option value="ecommerce" id="ecommerce">Ecommerce</option>
+        <option value="financiera" id="financiera">Financiera</option>
+        <option value="salud" id="salud">Salud</option>
+        <option value="agencia" id="agencia">Agencia digital</option>
+        <option value="otro" id="otro">Otro</option>
+      </select>
+      <input class="elementos2" type="url" name="sitioWeb" id="sitioWeb" placeholder="Sitio Web">
+      <button class="botonEnviar negritas" type="button" id="btnEnviar">Enviar</button>
+    </form>
+  </div>
+
+  </div>
+
+  <script>
+    $("#btnEnviar").click(function(){
+
+      if ($("#nombre").val().trim() == ''){
+        alert("Escribe tu nombre");
+        $("#nombre").focus();
+        return false;
+      }
+
+      if ($("#apellido").val().trim() == ''){
+        alert("Escribe tus apellidos");
+        $("#apellido").focus();
+        return false;
+      }
+
+      if ($("#email").val().trim() == ''){
+        alert("Escribe un correo electrónico");
+        $("#email").focus();
+        return false;
+      }
+
+      let expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!expresionCorreo.test($("#email").val().trim())) {
+        alert("Escribe un correo electrónico válido");
+        $("#email").focus();
+        return false;
+      }
+
+      if ($("#telefono").val().trim() == ''){
+        alert("Escribe tu número de teléfono");
+        $("#telefono").focus();
+        return false;
+      }
+
+      if ($("#presupuesto").val() == ''){
+        alert("Debes seleccionar una opción en presupuesto");
+        $("#presupuesto").focus();
+        return false;
+      }
+
+      if ($("#industria").val() == ''){
+        alert("Debes seleccionar una opción en industria");
+        $("#industria").focus();
+        return false;
+      }
+
+      $("#formulario").submit();
+
+    });
+  </script>
+
+</body>
+
+</html>

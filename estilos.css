@@ -1,0 +1,104 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  color: #333;
+  font-family: Helvetica;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.ancho{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.centrar{
+  text-align: center;
+}
+
+.negritas{
+  font-weight: bold;
+}
+
+.contenedorPrincipal{
+  background: #fafafa;
+  padding: 70px;
+}
+
+.contenedorBienvenida, .contenedorFormulario{
+  width: 45%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.contenedorBienvenida{
+  padding: 35px;
+}
+
+.contenedorFormulario{
+  margin-left: 9%;
+}
+
+.contactanos{
+  color: blue;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.titulo{
+  line-height: 50px;
+  font-size: 50px;
+  margin-bottom: 25px;
+  font-weight: normal;
+}
+
+.formulario{
+  width: 100%;
+  border-radius: 20px;
+  padding: 30px 15px;
+  background-color: #ffffff;
+  margin: auto;
+  box-shadow: 0px 0px 5px #aeaeae;
+}
+
+.elementos{
+  width: 49%;
+  display: inline-block;
+  vertical-align: top;
+  border: 1px #e1e1e1 solid;
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 10px;
+  margin-bottom: 35px;
+}
+
+input::placeholder{
+  color: #333;
+}
+
+.select, .elementos2{
+  border: 1px #e1e1e1 solid;
+  border-radius: 5px;
+  background-color: #ffffff;
+  width: 99%;
+  padding: 10px;
+  margin-bottom: 35px;
+}
+
+.select:focus, .elementos:focus, .elementos2:focus{
+  outline: 1px solid blue;
+}
+
+.botonEnviar{
+  background-color: blue;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+}
